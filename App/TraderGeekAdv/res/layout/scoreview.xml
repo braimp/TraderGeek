@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.musebrain.tradergeek.MainActivity" >
+
+   <TextView
+        android:id="@+id/scoreButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="52"
+        android:textSize="110dp"
+        android:textStyle="normal"
+        android:textColor="@color/semiblack"
+       />
+    
+    <TextView
+        android:id="@+id/lightmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/scoreButton"
+        android:layout_centerHorizontal="true"
+        android:text="@string/boldmsgstr"
+        android:textColor="@color/semiblack"
+        android:textSize="12dp"
+        android:layout_marginBottom="20dp"
+        android:textStyle="normal" >
+    </TextView>
+     <TextView
+        android:id="@+id/boldmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/lightmsg"
+        android:text="@string/lightmsgstr"
+        android:textColor="@color/semiblack"
+        android:textSize="17dp"
+        android:textStyle="bold" />
+    
+
+</RelativeLayout>
