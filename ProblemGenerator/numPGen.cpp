@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -18,37 +19,37 @@ void generateForDivisionInt(string fname);
 
   string convertToString(int num);
   string insertPoint(string numStr);
- 
+
 int main(){
 
   cout<<"Program to generate problems for mathematical test Trader Geek"<<endl;
-  
+
   string fileOut;
   cout<<"Enter filename to write problems to : ";
   cin>>fileOut;
-  
-  for(int i=0;i<8000;i++){
+
+  for(int i=0;i<250;i++){
     generateForAddition(fileOut);
     generateForSubtraction(fileOut);
-    generateForMultiplicationInt(fileOut);
-    generateForDivisionInt(fileOut);
+    generateForMultiplication(fileOut);
+    generateForDivision(fileOut);
     generateForAdditionInt(fileOut);
     generateForSubtractionInt(fileOut);
     generateForMultiplicationInt(fileOut);
     generateForDivisionInt(fileOut);
   }
-  
+
   return 0;
-  
+
 }
 
 void generateForAddition(string fname){
     ofstream f;
     f.open(fname.c_str(),ios_base::app);
-    
+
     int num1,num2;
     int scope = rand()%4;
-    
+
     switch(scope){
         case 0:
            num1 = rand()%100;
@@ -71,7 +72,7 @@ void generateForAddition(string fname){
            num2 = rand()%250;
            break;
     }
-    
+
     double num1D, num2D;
     string num1Str = convertToString(num1);
     string num2Str = convertToString(num2);
@@ -81,15 +82,15 @@ void generateForAddition(string fname){
     stringstream num2StrS(num2Str);
     num1StrS>>num1D;
     num2StrS>>num2D;
-    
+
     double ans = num1D + num2D;
-     
+
     stringstream equationStr;
     equationStr<<num1Str<<" + "<<num2Str<<" "<<ans;
-      
-    string eqn = equationStr.str(); 
+
+    string eqn = equationStr.str();
     f<<eqn<<endl;
-    f.close(); 
+    f.close();
 }
 
 
@@ -98,11 +99,14 @@ void generateForAddition(string fname){
     numStr<<num;
     return numStr.str();
   }
-  
+
   string insertPoint(string numStr){
     int len = numStr.length();
     int pointPos = rand()%(len) + 1;
-    return numStr.substr(0,pointPos-1) + "." + numStr.substr(pointPos-1);
+    string numRet = numStr.substr(0,pointPos-1) + "." + numStr.substr(pointPos-1);
+    if(pointPos==1)
+        numRet = "0" + numRet;
+    return numRet;
   }
 
 
@@ -110,10 +114,10 @@ void generateForAddition(string fname){
 void generateForAdditionInt(string fname){
     ofstream f;
     f.open(fname.c_str(),ios_base::app);
-    
+
     int num1,num2;
     int scope = rand()%4;
-    
+
     switch(scope){
     case 0:
            num1 = rand()%100;
@@ -136,25 +140,25 @@ void generateForAdditionInt(string fname){
            num2 = rand()%250;
            break;
     }
-    
+
     int ans = num1 + num2;
-    
+
     stringstream equationStr;
     equationStr<<num1<<" + "<<num2<<" "<<ans;
-      
-    string eqn = equationStr.str(); 
+
+    string eqn = equationStr.str();
     f<<eqn<<endl;
-    f.close(); 
+    f.close();
 }
 
 void generateForSubtractionInt(string fname){
     ofstream f;
     f.open(fname.c_str(),ios_base::app);
-    
-    
+
+
     int num1,num2;
     int scope = rand()%4;
-    
+
     switch(scope){
         case 0:
            num1 = rand()%100;
@@ -177,14 +181,14 @@ void generateForSubtractionInt(string fname){
            num2 = rand()%250;
            break;
     }
-    
-    
+
+
     int ans = num1 - num2;
-     
+
     stringstream equationStr;
     equationStr<<num1<<" - "<<num2<<" "<<ans;
-      
-    string eqn = equationStr.str(); 
+
+    string eqn = equationStr.str();
     f<<eqn<<endl;
     f.close();
 }
@@ -192,11 +196,11 @@ void generateForSubtractionInt(string fname){
 void generateForSubtraction(string fname){
     ofstream f;
     f.open(fname.c_str(),ios_base::app);
-    
-    
+
+
     int num1,num2;
     int scope = rand()%4;
-    
+
     switch(scope){
         case 0:
            num1 = rand()%100;
@@ -219,7 +223,7 @@ void generateForSubtraction(string fname){
            num2 = rand()%250;
            break;
     }
-    
+
     double num1D, num2D;
     string num1Str = convertToString(num1);
     string num2Str = convertToString(num2);
@@ -229,13 +233,13 @@ void generateForSubtraction(string fname){
     stringstream num2StrS(num2Str);
     num1StrS>>num1D;
     num2StrS>>num2D;
-    
+
     double ans = num1D - num2D;
-     
+
     stringstream equationStr;
     equationStr<<num1Str<<" - "<<num2Str<<" "<<ans;
-      
-    string eqn = equationStr.str(); 
+
+    string eqn = equationStr.str();
     f<<eqn<<endl;
     f.close();
 }
@@ -243,7 +247,7 @@ void generateForSubtraction(string fname){
 void generateForMultiplication(string fname){
     ofstream f;
     f.open(fname.c_str(),ios_base::app);
-    
+
     int num1,num2;
     int scope = rand()%5;
     switch(scope){
@@ -266,13 +270,13 @@ void generateForMultiplication(string fname){
         case 4:
            num1 = rand()%75;
            num2 = rand()%25;
-           break;   
+           break;
         default:
            num1 = rand()%100;
            num2 = rand()%100;
            break;
     }
-    
+
     double num1D, num2D;
     string num1Str = convertToString(num1);
     string num2Str = convertToString(num2);
@@ -282,13 +286,13 @@ void generateForMultiplication(string fname){
     stringstream num2StrS(num2Str);
     num1StrS>>num1D;
     num2StrS>>num2D;
-    
+
     double ans = num1D * num2D;
-     
+
     stringstream equationStr;
-    equationStr<<num1Str<<" * "<<num2Str<<" "<<ans; 
-    
-    string eqn = equationStr.str(); 
+    equationStr<<num1Str<<" * "<<num2Str<<" "<<ans;
+
+    string eqn = equationStr.str();
     f<<eqn<<endl;
     f.close();
 }
@@ -296,10 +300,10 @@ void generateForMultiplication(string fname){
 void generateForMultiplicationInt(string fname){
     ofstream f;
     f.open(fname.c_str(),ios_base::app);
-    
+
     int num1,num2;
     int scope = rand()%5;
-    
+
     switch(scope){
         case 0:
            num1 = rand()%100;
@@ -320,19 +324,19 @@ void generateForMultiplicationInt(string fname){
         case 4:
            num1 = rand()%75;
            num2 = rand()%25;
-           break;   
+           break;
         default:
            num1 = rand()%100;
            num2 = rand()%100;
            break;
     }
-    
+
     int ans = num1 * num2;
-    
+
     stringstream equationStr;
-    equationStr<<num1<<" * "<<num2<<" "<<ans; 
-    
-    string eqn = equationStr.str(); 
+    equationStr<<num1<<" * "<<num2<<" "<<ans;
+
+    string eqn = equationStr.str();
     f<<eqn<<endl;
     f.close();
 }
@@ -343,7 +347,7 @@ void generateForDivision(string fname){
 
     int num1,num2;
     int scope = rand()%4;
-    
+
     switch(scope){
         case 0:
            num1 = rand()%100;
@@ -366,8 +370,8 @@ void generateForDivision(string fname){
            num2 = rand()%100;
            break;
     }
-    
-    
+
+
     double num1D, num2D;
     string num1Str = convertToString(num1);
     string num2Str = convertToString(num2);
@@ -377,17 +381,17 @@ void generateForDivision(string fname){
     stringstream num2StrS(num2Str);
     num1StrS>>num1D;
     num2StrS>>num2D;
-    
-    double ans = num1D * num2D;
-     
-    stringstream equationStr;
-    equationStr<<ans<<" / "<<num2Str<<" "<<num1Str;  
 
-    string eqn = equationStr.str(); 
-    f<<eqn<<endl;    
-    
+    double ans = num1D * num2D;
+
+    stringstream equationStr;
+    equationStr<<ans<<" / "<<num2Str<<" "<<num1Str;
+
+    string eqn = equationStr.str();
+    f<<eqn<<endl;
+
     f.close();
-    
+
 }
 
 void generateForDivisionInt(string fname){
@@ -396,7 +400,7 @@ void generateForDivisionInt(string fname){
 
     int num1,num2;
     int scope = rand()%4;
-    
+
     switch(scope){
         case 0:
            num1 = rand()%100;
@@ -419,17 +423,17 @@ void generateForDivisionInt(string fname){
            num2 = rand()%100;
            break;
     }
-    
-    
-    int ans = num1 * num2;
-     
-    stringstream equationStr;
-    equationStr<<ans<<" / "<<num2<<" "<<num1;  
 
-    string eqn = equationStr.str(); 
-    f<<eqn<<endl;    
-    
+
+    int ans = num1 * num2;
+
+    stringstream equationStr;
+    equationStr<<ans<<" / "<<num2<<" "<<num1;
+
+    string eqn = equationStr.str();
+    f<<eqn<<endl;
+
     f.close();
-    
+
 }
 

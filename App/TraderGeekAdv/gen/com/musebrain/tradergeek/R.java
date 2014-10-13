@@ -1229,6 +1229,8 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int ic_launcher=0x7f020057;
+        public static final int leaderboard256=0x7f020058;
+        public static final int share=0x7f020059;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1242,7 +1244,6 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_settings=0x7f050054;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
         public static final int answer=0x7f050041;
@@ -1303,6 +1304,7 @@ containing a value of this type.
         public static final int search_src_text=0x7f050037;
         public static final int search_voice_btn=0x7f05003b;
         public static final int second=0x7f05003d;
+        public static final int share_button=0x7f050054;
         public static final int shortcut=0x7f05002e;
         public static final int showCustom=0x7f050007;
         public static final int showHome=0x7f050004;
@@ -1416,14 +1418,16 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000b;
-        public static final int action_settings=0x7f0a000f;
-        public static final int app_name=0x7f0a000d;
-        public static final int boldmsgstr=0x7f0a0014;
-        public static final int hello_world=0x7f0a000e;
-        public static final int lightmsgstr=0x7f0a0013;
-        public static final int start=0x7f0a0012;
-        public static final int tradergeek=0x7f0a0010;
-        public static final int tradergeeksub=0x7f0a0011;
+        public static final int action_settings=0x7f0a0011;
+        public static final int app_id=0x7f0a000d;
+        public static final int app_name=0x7f0a000f;
+        public static final int boldmsgstr=0x7f0a0016;
+        public static final int global_ranking_leaderboard=0x7f0a000e;
+        public static final int hello_world=0x7f0a0010;
+        public static final int lightmsgstr=0x7f0a0015;
+        public static final int start=0x7f0a0014;
+        public static final int tradergeek=0x7f0a0012;
+        public static final int tradergeeksub=0x7f0a0013;
     }
     public static final class style {
         /** 
@@ -2802,7 +2806,7 @@ containing a value of this type.
          */
         public static final int[] MenuView = {
             0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e,
-            0x0101012f, 0x01010130, 0x01010131, 0x01010435
+            0x0101012f, 0x01010130, 0x01010131, 0x01010438
         };
         /**
           <p>
