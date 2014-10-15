@@ -239,17 +239,17 @@ public class MainActivity extends ActionBarActivity{
 	
 	
 	private void generateEqnDB(){
-		
 		// Random instance for generating operation probabilistically
 		// We have a bias of 2:1 for Addition to Multiplication opeartions
 		Random randOp = new Random();
-		
-		for(int i=0;i<numProblems;i++){
-			int operationRand = randOp.nextInt()%4;
-			if(operationRand ==0 || operationRand ==1 || operationRand == 3) generateAddOrSub();
-			else generateMulOrDiv();
+		int mulPos = rand.nextInt(4);
+		for(int i=0;i<numProblems/4;i++){
+			for(int j=0;j<4;j++){
+				if(j == mulPos) generateMulOrDiv();
+				else generateAddOrSub();
+			}
+			mulPos = rand.nextInt(4);
 		}
-		
 	}
 	
 	private void generateAddOrSub(){
